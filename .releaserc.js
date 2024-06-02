@@ -4,7 +4,7 @@ module.exports = {
     ...common,
     plugins: [
         ...common.plugins,
-        'semantic-release-pnpm',
+        '@semantic-release/npm',
         [
             '@semantic-release/git',
             {
