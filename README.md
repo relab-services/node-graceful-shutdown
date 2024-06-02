@@ -1,2 +1,74 @@
-# node-graceful-shutdown
-Graceful shutdown for Node.js application
+<h1 align="center">🚀 Graceful Shutdown for Node.js</h1>
+
+<p align="center">Tiny and stupid simple dependency-free Node.js library to shutdown gracefully.</p>
+
+## Requirements
+
+- Node 18+
+
+## Installation
+
+### NPM
+
+```
+npm install --save @relab/graceful-shutdown
+```
+
+### PNPM
+
+```
+npm add @relab/graceful-shutdown
+```
+
+## Usage
+
+```Typescript
+import { handleShutdown, onShutdown } from './utils/@shutdown'
+
+// ...
+
+onShutdown(async () => {
+    // clean up your resources here
+})
+
+// setup graceful shutdown
+handleShutdown()
+```
+
+### Custom shutdown timeout
+
+```Typescript
+import { handleShutdown, onShutdown } from './utils/@shutdown'
+
+// ...
+
+// setup graceful shutdown
+handleShutdown({
+    // 3000ms timeout to complete all shutdown tasks (default - 5000)
+    timeout: 3000
+})
+```
+
+### Shutdown callbacks
+
+```Typescript
+import { handleShutdown, onShutdown } from './utils/@shutdown'
+
+// ...
+
+handleShutdown({
+    onShutdownStart: () => {
+        console.log('Shut down requested')
+    },
+    onShutdownError: reason => {
+        console.log(`Shutdown tasks error: ${reason}`)
+    },
+    onShutdownComplete: () => {
+        console.log('Shutdown tasks completed')
+    },
+})
+```
+
+## License
+
+Released under [MIT](/LICENSE) by [Sergey Zwezdin](https://github.com/sergeyzwezdin).
