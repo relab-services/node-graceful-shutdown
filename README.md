@@ -23,7 +23,7 @@ npm add @relab/graceful-shutdown
 ## Usage
 
 ```Typescript
-import { handleShutdown, onShutdown } from './utils/@shutdown'
+import { handleShutdown, onShutdown } from '@relab/graceful-shutdown'
 
 // ...
 
@@ -38,7 +38,7 @@ handleShutdown()
 ### Custom shutdown timeout
 
 ```Typescript
-import { handleShutdown, onShutdown } from './utils/@shutdown'
+import { handleShutdown, onShutdown } from '@relab/graceful-shutdown'
 
 // ...
 
@@ -52,7 +52,7 @@ handleShutdown({
 ### Shutdown callbacks
 
 ```Typescript
-import { handleShutdown, onShutdown } from './utils/@shutdown'
+import { handleShutdown, onShutdown } from '@relab/graceful-shutdown'
 
 // ...
 
